@@ -11,13 +11,13 @@
 </head>
 <body>
 
-    <!-- NAVBAR MODERNA -->
+    <!-- NAVBAR MODERNA CON MENÚ MÓVIL -->
     <nav class="navbar-modern">
         <div class="nav-container-modern">
             <div class="nav-left">
                 <a href="#hero" class="logo-modern">
                     <img src="img/logo.png" alt="Unica" />
-                    <span class="logo-text"></span>
+                    <span class="logo-text">Unica</span>
                 </a>
                 <div class="nav-links-modern">
                     <a href="#hero">Inicio</a>
@@ -28,8 +28,25 @@
                 </div>
             </div>
             <div class="nav-right">
+                <button class="menu-toggle" aria-label="Menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
                 <a href="html/ayuda.html" class="nav-link-secondary">Ayuda</a>
                 <a href="#descarga-app" class="btn-register">Descarga la App</a>
+            </div>
+        </div>
+        
+        <!-- Menú móvil desplegable -->
+        <div class="mobile-menu">
+            <div class="mobile-menu-content">
+                <a href="#hero">Inicio</a>
+                <a href="#sugerencias">Servicios</a>
+                <a href="#ubicacion-parking">Ubicaciones</a>
+                <a href="#funciona">Cómo Funciona</a>
+                <a href="#operador">Negocios</a>
+                <a href="html/ayuda.html">Ayuda</a>
             </div>
         </div>
     </nav>
@@ -394,6 +411,38 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
     <!-- Tu JavaScript -->
     <script src="js/mapa.js"></script>
+    
+    <!-- JavaScript para menú móvil -->
+    <script>
+        // Toggle menú móvil
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Cerrar menú al hacer clic en un enlace
+        const mobileLinks = document.querySelectorAll('.mobile-menu a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Cerrar menú al hacer scroll
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > lastScroll && mobileMenu.classList.contains('active')) {
+                menuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
+            lastScroll = currentScroll;
+        });
+    </script>
 
 </body>
-</html> 
+</html>
