@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Unica Smart Parking | Encuentra tu espacio de estacionamiento</title>
+    <meta name="description" content="Reserva tu estacionamiento en tiempo real. Sistema QR, geolocalización y ahorro de hasta 30 minutos.">
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+</head>
+<body>
+
+    <!-- NAVBAR MODERNA -->
+    <nav class="navbar-modern">
+        <div class="nav-container-modern">
+            <div class="nav-left">
+                <a href="#hero" class="logo-modern">
+                    <img src="../img/logo.png" alt="Unica" />
+                    <span class="logo-text"></span>
+                </a>
+                <div class="nav-links-modern">
+                    <a href="#hero">Inicio</a>
+                    <a href="#sugerencias">Servicios</a>
+                    <a href="#ubicacion-parking">Ubicaciones</a>
+                    <a href="#funciona">Cómo Funciona</a>
+                    <a href="#operador">Negocios</a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <a href="ayuda.html" class="nav-link-secondary">Ayuda</a>
+                <a href="#descarga-app" class="btn-register">Descarga la App</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION - SOLO INFORMATIVO -->
+    <section id="hero" class="hero-uber">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="location-badge">
+                        📍 Santa Cruz de la Sierra, Bolivia
+                    </div>
+                    <h1>Encuentra tu espacio de estacionamiento ahora</h1>
+                    <p>Reserva en segundos con tecnología QR. Ahorra tiempo y evita el estrés de buscar dónde estacionar.</p>
+                    
+                    <!-- LLAMADO A ACCIÓN PARA DESCARGAR APP -->
+                    <div class="cta-box">
+                        <h3>Descarga la app para comenzar</h3>
+                        <p>Busca, reserva y paga desde tu móvil</p>
+                        <div class="cta-buttons">
+                            <a href="https://apps.apple.com/app/idTU_APP_ID" class="btn-cta">
+                                <img src="../img/DAppSore.png" alt="App Store" style="height: 40px;">
+                            </a>
+                            <a href="https://play.google.com/store/apps?hl=es_419" class="btn-cta">
+                                <img src="../img/DplayStore.png" alt="Google Play" style="height: 40px;">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="hero-actions">
+                        <a href="#funciona" class="link-simple">¿Cómo funciona?</a>
+                        <span class="separator">•</span>
+                        <a href="#operador" class="link-simple">¿Eres operador?</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-illustration">
+                         <img src="../img/img1.png" alt="Estacionamiento inteligente" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CARACTERÍSTICAS / BENEFICIOS -->
+    <section id="sugerencias" class="sugerencias-section">
+        <div class="contenedor-modern">
+            <h2 class="section-title">¿Por qué elegir Unica?</h2>
+            <p class="section-subtitle">La forma más inteligente de estacionar en Bolivia</p>
+            <div class="sugerencias-grid">
+                <div class="sugerencia-card">
+                    <div class="sugerencia-icon">🚗</div>
+                    <div class="sugerencia-content">
+                        <h3>Encuentra en Tiempo Real</h3>
+                        <p>Ve la disponibilidad de espacios cerca de ti al instante</p>
+                    </div>
+                </div>
+
+                <div class="sugerencia-card">
+                    <div class="sugerencia-icon">📅</div>
+                    <div class="sugerencia-content">
+                        <h3>Reserva con Anticipación</h3>
+                        <p>Asegura tu espacio antes de llegar y evita sorpresas</p>
+                    </div>
+                </div>
+
+                <div class="sugerencia-card">
+                    <div class="sugerencia-icon">⚡</div>
+                    <div class="sugerencia-content">
+                        <h3>Acceso QR Instantáneo</h3>
+                        <p>Entra y sal con tu código QR en segundos</p>
+                    </div>
+                </div>
+
+                <div class="sugerencia-card">
+                    <div class="sugerencia-icon">💳</div>
+                    <div class="sugerencia-content">
+                        <h3>Pago Digital Seguro</h3>
+                        <p>Paga desde la app con tarjeta o QR bancario</p>
+                    </div>
+                </div>
+
+                <div class="sugerencia-card">
+                    <div class="sugerencia-icon">🏍️</div>
+                    <div class="sugerencia-content">
+                        <h3>Para Motos y Autos</h3>
+                        <p>Espacios especiales para todo tipo de vehículos</p>
+                    </div>
+                </div>
+
+                <div class="sugerencia-card">
+                    <div class="sugerencia-icon">💰</div>
+                    <div class="sugerencia-content">
+                        <h3>Ahorra Tiempo y Dinero</h3>
+                        <p>Reduce hasta 30 minutos de búsqueda de estacionamiento</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- UBICACIONES - SOLO VISTA -->
+    <section id="ubicacion-parking" class="ubicacion-section">
+        <div class="contenedor-modern">
+            <h2 class="section-title">Estacionamientos disponibles</h2>
+            <p class="section-subtitle">Más de 50 ubicaciones en Santa Cruz de la Sierra</p>
+
+            <div class="map-layout">
+                <div class="map-sidebar">
+                    <h3 style="margin-bottom: 20px; color: #111827;">Ubicaciones principales</h3>
+                    <div class="location-item">
+                        <div class="location-info">
+                            <h4>Aeropuerto Viru Viru</h4>
+                            <p>Zona aeroportuaria</p>
+                        </div>
+                        <span class="availability-badge">✓ Disponible</span>
+                    </div>
+                    <div class="location-item">
+                        <div class="location-info">
+                            <h4>Terminal de Buses</h4>
+                            <p>Zona centro</p>
+                        </div>
+                        <span class="availability-badge">✓ Disponible</span>
+                    </div>
+                    <div class="location-item">
+                        <div class="location-info">
+                            <h4>Ventura Mall</h4>
+                            <p>Zona norte</p>
+                        </div>
+                        <span class="availability-badge">✓ Disponible</span>
+                    </div>
+                    <div class="location-item">
+                        <div class="location-info">
+                            <h4>Plaza 24 de Septiembre</h4>
+                            <p>Centro histórico</p>
+                        </div>
+                        <span class="availability-badge">✓ Disponible</span>
+                    </div>
+                    
+                    <div style="margin-top: 24px; padding: 16px; background: #F3F4F6; border-radius: 8px;">
+                        <p style="font-size: 14px; color: #6B7280; margin-bottom: 12px;">
+                            📱 Para ver disponibilidad en tiempo real, descarga la app
+                        </p>
+                        <a href="#descarga-app" class="btn-text">Descargar ahora →</a>
+                    </div>
+                </div>
+
+                <div class="map-container-modern">
+                    <div id="mapa"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CÓMO FUNCIONA -->
+    <section id="funciona" class="funciona-section">
+        <div class="contenedor-modern">
+            <h2 class="section-title">Cómo funciona Unica Smart Parking</h2>
+            <p class="section-subtitle">Tres pasos simples para encontrar tu espacio perfecto</p>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Descarga y Busca</h3>
+                    <p>Descarga la app, activa tu ubicación y encuentra estacionamientos disponibles cerca de ti en tiempo real</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Reserva y Paga</h3>
+                    <p>Selecciona tu espacio, elige la duración y paga de forma segura desde la app</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Escanea y Estaciona</h3>
+                    <p>Al llegar, escanea tu código QR en la entrada, estaciona y sal sin complicaciones</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 48px;">
+                <a href="#descarga-app" class="btn-primary-large">Comenzar ahora</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFICIOS ADICIONALES -->
+    <section class="beneficios-section" style="padding: 80px 0; background: #F3F4F6;">
+        <div class="contenedor-modern">
+            <h2 class="section-title" style="text-align: center;">Beneficios exclusivos</h2>
+            <div class="beneficios-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; margin-top: 48px;">
+                <div style="text-align: center;">
+                    <div style="font-size: 48px; margin-bottom: 16px;">⏱️</div>
+                    <h3 style="font-size: 24px; font-weight: 600; color: #111827; margin-bottom: 8px;">Ahorra 30 minutos</h3>
+                    <p style="color: #6B7280;">En promedio cada vez que buscas estacionamiento</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 48px; margin-bottom: 16px;">🔒</div>
+                    <h3 style="font-size: 24px; font-weight: 600; color: #111827; margin-bottom: 8px;">100% Seguro</h3>
+                    <p style="color: #6B7280;">Pagos encriptados y estacionamientos verificados</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 48px; margin-bottom: 16px;">📍</div>
+                    <h3 style="font-size: 24px; font-weight: 600; color: #111827; margin-bottom: 8px;">50+ Ubicaciones</h3>
+                    <p style="color: #6B7280;">En Santa Cruz y expandiéndose a toda Bolivia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN OPERADORES -->
+    <section id="operador" class="operador-section">
+        <div class="contenedor-modern">
+            <div class="operador-content">
+                <div class="operador-text">
+                    <h2>¿Tienes un estacionamiento?</h2>
+                    <p>Únete a Unica para Operadores y digitaliza tu negocio. Aumenta tu ocupación y maximiza tus ingresos con nuestra plataforma.</p>
+                    <div class="operador-features">
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span>Dashboard en tiempo real</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span>Sin inversión en hardware</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span>Comisión solo por reserva exitosa</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span>Soporte 24/7 dedicado</span>
+                        </div>
+                    </div>
+                    <a href="mailto:operadores@unica.com.bo" class="btn-primary-large">Contactar ventas</a>
+                    <a href="ayuda.html" class="link-simple">Más información →</a>
+                </div>
+                <div class="operador-image">
+                    <img src="../img/dashboard.png" alt="Dashboard para operadores" style="width: 100%; height: auto; border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DESCARGA APP -->
+    <section id="descarga-app" class="descarga-section">
+        <div class="contenedor-modern">
+            <div class="descarga-content">
+                <div class="descarga-text">
+                    <h2>Descarga la app de Unica</h2>
+                    <p>Disponible para iOS y Android. Descarga gratis y empieza a estacionar más inteligente hoy mismo.</p>
+                    <ul style="margin-top: 24px; list-style: none; padding: 0;">
+                        <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                            <span style="color: #16A34A; font-size: 20px;">✓</span>
+                            <span style="color: #6B7280;">Registro gratis en 2 minutos</span>
+                        </li>
+                        <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                            <span style="color: #16A34A; font-size: 20px;">✓</span>
+                            <span style="color: #6B7280;">Primera reserva con descuento</span>
+                        </li>
+                        <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                            <span style="color: #16A34A; font-size: 20px;">✓</span>
+                            <span style="color: #6B7280;">Sin costos de suscripción</span>
+                        </li>
+                    </ul>
+                </div>
+               <div class="descarga-apps">
+                    <div class="qr-section">
+                        <div class="qr-code">
+                            <img src="../img/qrAndroid.jpeg" alt="QR Android" style="width: 48%; height: auto; margin: 2px;">
+                            <img src="../img/qrApple.jpeg" alt="QR iOS" style="width: 48%; height: auto; margin: 2px;">
+                        </div>
+                        <p>Escanea para descargar</p>
+                    </div>
+                    <div class="badges-section">
+                        <p class="badges-title">Descarga ahora</p>
+                        <div class="app-badges-modern">
+                            <a href="https://apps.apple.com/app/idTU_APP_ID" target="_blank" rel="noopener">
+                                <img src="../img/DAppSore.png" alt="App Store" class="store-badge-modern">
+                            </a>
+                            <a href="https://play.google.com/store/apps?hl=es_419" target="_blank" rel="noopener">
+                                <img src="../img/DplayStore.png" alt="Google Play" class="store-badge-modern">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER MODERNO -->
+    <footer class="footer-modern">
+        <div class="contenedor-modern">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Compañía</h4>
+                    <ul>
+                        <li><a href="#">Acerca de nosotros</a></li>
+                        <li><a href="#">Nuestra misión</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="#descarga-app">Para Conductores</a></li>
+                        <li><a href="#operador">Para Operadores</a></li>
+                        <li><a href="#">Reservas corporativas</a></li>
+                        <li><a href="#">Preguntas frecuentes</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Términos y condiciones</a></li>
+                        <li><a href="#">Política de privacidad</a></li>
+                        <li><a href="#">Política de cookies</a></li>
+                        <li><a href="#">Política de reembolso</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Soporte</h4>
+                    <ul>
+                        <li><a href="ayuda.html">Centro de ayuda</a></li>
+                        <li><a href="mailto:soporte@unica.com.bo">Email: soporte@unica.com.bo</a></li>
+                        <li><a href="https://wa.me/591XXXXXXX">WhatsApp</a></li>
+                        <li><a href="tel:+591XXXXXXX">Tel: +591 XXX XXXX</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom-modern">
+                <div class="footer-bottom-left">
+                    <div class="social-links-modern">
+                        <a href="https://www.facebook.com/?locale=es_LA"><img src="../img/faceb.png" alt="Facebook"></a>
+                        <a href="https://www.instagram.com/"><img src="../img/insta.png" alt="Instagram"></a>
+                        <a href="https://x.com/?lang=es"><img src="../img/X.png" alt="X"></a>
+                    </div>
+                    <div class="footer-language">
+                        <select class="language-select">
+                            <option>Español</option>
+                            <option>English</option>
+                        </select>
+                    </div>
+                    <div class="footer-location">
+                        📍 Santa Cruz de la Sierra, Bolivia
+                    </div>
+                </div>
+                <div class="footer-copyright-modern">
+                    © 2025 Unica Smart Parking. Todos los derechos reservados.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Leaflet JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    <!-- Tu JavaScript -->
+    <script src="../js/mapa.js"></script>
+
+</body>
+</html>
